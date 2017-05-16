@@ -81,7 +81,7 @@ module.exports = {
         firstName: 'User',
         lastName: 'Local',
         address: 'Home',
-        quantity: '1.0',
+        quantity: '2.0',
         timeSlot: '9:00',
         displayName: 'User Local',
         roles: ['user']
