@@ -80,6 +80,9 @@ module.exports = {
         email: process.env.MONGO_SEED_USER_EMAIL || 'user@localhost.com',
         firstName: 'User',
         lastName: 'Local',
+        address: 'Home',
+        quantity: '1.0',
+        timeSlot: '9:00',
         displayName: 'User Local',
         roles: ['user']
       },
@@ -89,6 +92,9 @@ module.exports = {
         email: process.env.MONGO_SEED_ADMIN_EMAIL || 'admin@localhost.com',
         firstName: 'Admin',
         lastName: 'Local',
+        address: 'Home',
+        quantity: '1.0',
+        timeSlot: '9:00',
         displayName: 'Admin Local',
         roles: ['user', 'admin']
       }

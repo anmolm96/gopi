@@ -63,6 +63,34 @@ var UserSchema = new Schema({
     default: '',
     validate: [validateLocalStrategyProperty, 'Please fill in your last name']
   },
+  address: {
+    type: String,
+    trim: true,
+    default: '',
+    validate: [validateLocalStrategyProperty, 'Please fill in your home address']
+  },
+  quantity: {
+    type: String,
+    trim: true,
+    default: '',
+    validate: [validateLocalStrategyProperty, 'Please fill in your desired quantity']
+  },
+  timeSlot: {
+    type: String,
+    trim: true,
+    default: '',
+    validate: [validateLocalStrategyProperty, 'Please fill in your desired time slot']
+  },
+  amountDue: {
+    type: String,
+    trim: true,
+    default: '0'
+  },
+  runningBill: {
+    type: String,
+    trim: true,
+    default: ''
+  },
   displayName: {
     type: String,
     trim: true
