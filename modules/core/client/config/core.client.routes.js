@@ -33,6 +33,30 @@
         controller: 'HomeController',
         controllerAs: 'vm'
       })
+      .state('about', {
+        url: '/about',
+        templateUrl: '/modules/core/client/views/about.client.view.html',
+        data: {
+          ignoreState: true,
+          pageTitle: 'About Us'
+        }
+      })
+      .state('contact', {
+        url: '/contact',
+        templateUrl: '/modules/core/client/views/contact.client.view.html',
+        data: {
+          ignoreState: true,
+          pageTitle: 'Contact Us'
+        }
+      })
+      .state('pricing', {
+        url: '/pricing',
+        templateUrl: '/modules/core/client/views/pricing.client.view.html',
+        data: {
+          ignoreState: true,
+          pageTitle: 'Pricing'
+        }
+      })
       .state('not-found', {
         url: '/not-found',
         templateUrl: '/modules/core/client/views/404.client.view.html',
