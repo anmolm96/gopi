@@ -10,6 +10,5 @@
   function HomeController($scope, $state, Authentication) {
     var vm = this;
     vm.authentication = Authentication;
-    console.log(vm.authentication);
   }
 }());
