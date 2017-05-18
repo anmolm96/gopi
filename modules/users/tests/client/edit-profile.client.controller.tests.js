@@ -1,7 +1,7 @@
 ﻿(function () {
   'use strict';
 
-  describe('Edit Profile Controller Tests', function () {
+  describe('Edit Order Controller Tests', function () {
     // Initialize global variables
     var EditProfileController,
       $scope,
@@ -82,7 +82,7 @@
         $scope.vm.updateUserProfile(true);
         $httpBackend.flush();
 
-        expect(Notification.success).toHaveBeenCalledWith({ message: '<i class="glyphicon glyphicon-ok"></i> Edit profile successful!' });
+        expect(Notification.success).toHaveBeenCalledWith({ message: '<i class="glyphicon glyphicon-ok"></i> Edit Order successful!' });
       }));
 
       it('should call Notification.error if error', inject(function (UsersService) {
@@ -94,7 +94,7 @@
         $scope.vm.updateUserProfile(true);
         $httpBackend.flush();
 
-        expect(Notification.error).toHaveBeenCalledWith({ message: errorMessage, title: '<i class="glyphicon glyphicon-remove"></i> Edit profile failed!' });
+        expect(Notification.error).toHaveBeenCalledWith({ message: errorMessage, title: '<i class="glyphicon glyphicon-remove"></i> Edit Order failed!' });
       }));
     });
 
