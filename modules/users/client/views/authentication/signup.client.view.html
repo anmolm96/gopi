@@ -44,6 +44,19 @@
           </div>
         </div>
         <div class="form-group" show-errors>
+          <label for="milkType"> Milk Type </label>
+          <select id="milkType" name="milkType" class="form-control" ng-model="vm.credentials.milkType" required>
+            <option value="" disabled selected>---Please select---</option>
+            <option ng-repeat="type in vm.type_options" value="{{type}}">
+              Double Toned: {{type['double-toned']}} L
+              Toned: {{type['toned']}} L
+            </option>
+          </select>
+          <div ng-messages="vm.userForm.quantity.$error" role="alert">
+            <p class="help-block error-text" ng-message="required"> Quantity is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
           <label for="timeSlot"> Delivery Time Slot </label>
           <select id="timeSlot" name="timeSlot" class="form-control" ng-model="vm.credentials.timeSlot" required>
             <option value="" disabled selected>---Please select---</option>

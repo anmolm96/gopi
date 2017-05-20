@@ -84,11 +84,19 @@ var UserSchema = new Schema({
     default: '',
     validate: [validateLocalStrategyProperty, 'Please fill in your desired quantity']
   },
+  milkType: {
+    type: Object,
+    default: {}
+  },
   timeSlot: {
     type: String,
     trim: true,
     default: '',
     validate: [validateLocalStrategyProperty, 'Please fill in your desired time slot']
+  },
+  active: {
+    type: Boolean,
+    default: true
   },
   amountDue: {
     type: String,

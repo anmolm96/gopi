@@ -24,7 +24,21 @@
   </div>
   <div class="well" ng-if="vm.authentication">
     <h3>Your Order details</h3>
+    <p> Order Status:
+      <span ng-if="vm.authentication.user.active"> Active</span>
+      <span ng-if="!vm.authentication.user.active"> Inactive</span>
+    </p>
     <p> Order Quantity: <span ng-bind="vm.authentication.user.quantity"></span> L </p>
+    <p> Order Type:
+      <ul>
+        <li>
+          Double Toned: {{vm.milkType["double-toned"]}} L
+        </li>
+        <li>
+          Toned: {{vm.milkType["toned"]}} L
+        </li>
+      </ul>
+    </p>
     <p> Delivery Time Slot: <span ng-bind="vm.authentication.user.timeSlot"> </span> AM
       - <span ng-bind="vm.end_slot"> </span> AM</p>
     <p> Go to Edit Order to pause your order or change your quantity/time slot

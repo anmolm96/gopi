@@ -32,6 +32,8 @@ exports.update = function (req, res) {
   user.timeSlot = req.body.timeSlot;
   user.amountDue = req.body.amountDue;
   user.runningBill = req.body.runningBill;
+  user.active = req.body.active;
+  user.milkType = req.body.milkType;
 
   user.save(function (err) {
     if (err) {
