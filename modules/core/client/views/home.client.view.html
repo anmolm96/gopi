@@ -6,10 +6,14 @@
       </div>
     </div>
     <br>
-    <div class="row" ng-if="vm.authentication.user">
-      <p class="lead">
+    <div class="row">
+      <p class="lead" ng-if="vm.authentication">
         Welcome back, <span ng-bind="vm.authentication.user.firstName"></span>!
         Your current account balance is: &#8377;<span ng-bind="vm.authentication.user.amountDue"></span>
+      </p>
+      <p class="lead" ng-hide="vm.authentication">
+        Welcome to Gopi! We're an on-demand daily milk delivery service. Click
+        Sign Up to get started.
       </p>
     </div>
     <div class="row" ng-if="vm.authentication.user && vm.authentication.user.amountDue > 0">
@@ -18,11 +22,21 @@
       </p>
     </div>
   </div>
-  <div class="well">
-    <h2>TODO</h2>
-    <p>
-      Need to add more stuff here:
-    </p>
+  <div class="well" ng-if="vm.authentication">
+    <h3>Your Order details</h3>
+    <p> Order Quantity: <span ng-bind="vm.authentication.user.quantity"></span> L </p>
+    <p> Delivery Time Slot: <span ng-bind="vm.authentication.user.timeSlot"> </span> AM
+      - <span ng-bind="vm.end_slot"> </span> AM</p>
+    <p> Go to Edit Order to pause your order or change your quantity/time slot
+       for future deliveries </p>
+  </div>
+  <div class="well" ng-hide="vm.authentication">
+    <h3>Features</h2>
+    <p> Gopi is an on-demand daily milk delivery service </p>
+    <p> You can change the amount you want and when you want it to be delivered
+      on a daily basis very easily</p>
+    <p> We also have an integrated payment system so you can pay for your
+      milk with a credit/debit card, online wallets, and even UPI!</p>
   </div>
   <br> <a ui-sref="privacy">Privacy Policy</a>
   <br> <a ui-sref="terms">Terms and Conditions</a>

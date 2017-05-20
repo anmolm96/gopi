@@ -27,6 +27,7 @@ exports.update = function (req, res) {
   user.displayName = user.firstName + ' ' + user.lastName;
   user.roles = req.body.roles;
   user.address = req.body.address;
+  user.phoneNum = req.body.phoneNum;
   user.quantity = req.body.quantity;
   user.timeSlot = req.body.timeSlot;
   user.amountDue = req.body.amountDue;

@@ -63,6 +63,15 @@ var UserSchema = new Schema({
     default: '',
     validate: [validateLocalStrategyProperty, 'Please fill in your last name']
   },
+  phoneNum: {
+    type: String,
+    index: {
+      unique: true,
+      sparse: true // For this to work on a previously indexed field, the index must be dropped & the application restarted.
+    },
+    trim: true,
+    validate: [validateLocalStrategyProperty, 'Please fill a valid phone number']
+  },
   address: {
     type: String,
     trim: true,
