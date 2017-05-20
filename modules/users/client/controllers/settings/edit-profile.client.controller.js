@@ -29,7 +29,6 @@
         vm.type_options.push({ 'toned': i, 'double-toned': quant - i });
       }
     };
-    console.log(vm.user.milkType);
 
     // Update a user profile
     function updateUserProfile(isValid) {
