@@ -23,7 +23,7 @@
       var doc = new jsPDF();
       doc.autoTable(getColumns(), getData(), {
         styles: {fontSize: 8, overflow: 'linebreak', columnWidth: 'wrap'},
-        columnStyles: {text: {columnWidth: 'auto'}},
+        columnStyles: {address: {columnWidth: 'auto'}},
         bodyStyles: {valign: 'top'},
       });
       doc.save("users.pdf");
