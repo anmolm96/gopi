@@ -22,8 +22,10 @@
     function pdf() {
       var doc = new jsPDF();
       doc.autoTable(getColumns(), getData(), {
-        styles: {overflow: 'linebreak', columnWidth: 'wrap'},
-        theme: 'grid'
+        styles: {fontSize: 8, overflow: 'linebreak', columnWidth: 'wrap'},
+        columnStyles: {text: {columnWidth: 'auto'}},
+        theme: 'grid',
+        tableWidth: 'wrap'
       });
       doc.save("users.pdf");
     }
