@@ -20,7 +20,7 @@ exports.renderIndex = function (req, res) {
       profileImageURL: req.user.profileImageURL,
       email: validator.escape(req.user.email),
       address: validator.escape(req.user.address),
-      phoneNum: validator.escape(req.user.phoneNum),
+      phoneNum: req.user.phoneNum,
       quantity: validator.escape(req.user.quantity),
       milkType: req.user.milkType,
       timeSlot: validator.escape(req.user.timeSlot),
