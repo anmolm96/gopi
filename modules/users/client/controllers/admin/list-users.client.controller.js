@@ -12,11 +12,18 @@
     vm.buildPager = buildPager;
     vm.figureOutItemsToDisplay = figureOutItemsToDisplay;
     vm.pageChanged = pageChanged;
+    vm.pdf = pdf;
 
     AdminService.query(function (data) {
       vm.users = data;
       vm.buildPager();
     });
+
+    function pdf() {
+      var doc = new jsPDF();
+      doc.text('Hello world!', 10, 10);
+      doc.save('users.pdf');
+    }
 
     function buildPager() {
       vm.pagedItems = [];
