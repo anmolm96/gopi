@@ -4,6 +4,9 @@ module.exports = function (app) {
   // Root routing
   var core = require('../controllers/core.server.controller');
 
+  //Razorpay Payment
+  app.route('/rzp-payment').post(core.razorpayPayment);
+
   // Define error pages
   app.route('/server-error').get(core.renderServerError);
 

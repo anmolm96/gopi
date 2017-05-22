@@ -11,9 +11,16 @@
   </div>
   <div class="list-group">
     <a ng-repeat="user in vm.pagedItems" ui-sref="admin.user({userId: user._id})" class="list-group-item">
-      <h4 class="list-group-item-heading" ng-bind="user.username"></h4>
-      <p class="list-group-item-text pull-right small" ng-bind="user.roles"></p>
-      <p class="list-group-item-text" ng-bind="user.email"></p>
+      <h4 class="list-group-item-heading" ng-bind="user.displayName"></h4>
+      <p class="list-group-item-text pull-right small" >
+        <span ng-if="user.active"> Active</span>
+        <span ng-if="!user.active"> Inactive</span>
+      </p>
+      <p class="list-group-item-text">
+        Time Slot: {{user.timeSlot}}
+        Toned: {{user.milkType["toned"]}}
+        Double Toned: {{user.milkType["double-toned"]}}
+      </p>
     </a>
   </div>
 

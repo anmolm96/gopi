@@ -31,6 +31,11 @@
   <!-- Fav Icon -->
   <link href="/{{favicon}}" rel="shortcut icon" type="image/x-icon">
 
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
+
+
+
   <!-- Application CSS Files -->
   {{#each cssFiles}}<link rel="stylesheet" href="/{{this}}">{{/each}}
 </head>
@@ -74,7 +79,7 @@
 
   {{#if livereload}}
   <!--Livereload script rendered -->
-  <script type="text/javascript" src="localhost:35729/livereload.js"></script>
+  <script type="text/javascript" src="{{host}}:35729/livereload.js"></script>
   {{/if}}
 </body>
 

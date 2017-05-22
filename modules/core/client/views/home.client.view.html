@@ -16,9 +16,9 @@
         Sign Up to get started.
       </p>
     </div>
-    <div class="row" ng-if="vm.authentication.user && vm.authentication.user.amountDue > 0">
-      <p>
-        <a class="btn btn-primary btn-lg" href="http://meanjs.org" target="_blank">Pay Now</a>
+    <div class="row" >
+      <p ng-if="vm.authentication && vm.authentication.user.amountDue > 0">
+        <a class="btn btn-primary btn-lg" ng-click="vm.pay()">Pay Now</a>
       </p>
     </div>
   </div>

@@ -2,7 +2,8 @@
 
 var validator = require('validator'),
   path = require('path'),
-  config = require(path.resolve('./config/config'));
+  config = require(path.resolve('./config/config')),
+  request = require('request');
 
 /**
  * Render the main application page
@@ -69,3 +70,21 @@ exports.renderNotFound = function (req, res) {
     }
   });
 };
+
+/**
+ *  Handles the Razorpay Payment
+ */
+ exports.razorpayPayment = function(req, res) {
+   var pay_url = "https://"+config.razorpay.key_id +
+   ":"+ config.razorpay.key_secret+"@api.razorpay.com/v1/payments/" +
+   req.body.payment_id + "/capture";
+
+   request({
+     method: 'POST',
+     url: pay_url,
+     form: {
+       amount: req.body.amount
+     }
+   }, function(err, res, body){
+   });
+ };
