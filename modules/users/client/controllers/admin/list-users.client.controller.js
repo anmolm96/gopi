@@ -21,8 +21,35 @@
 
     function pdf() {
       var doc = new jsPDF();
-      doc.text('Hello world!', 10, 10);
-      doc.save('users.pdf');
+      doc.autoTable(getColumns(), getData());
+      doc.save("users.pdf");
+    }
+
+    function getColumns() {
+      return [
+        {title: "Name", dataKey: "name"},
+        {title: "Phone Number", dataKey: "phone"},
+        {title: "Address", dataKey: "address"},
+        {title: "Time Slot", dataKey: "time"},
+        {title: "Milk Type", dataKey: "milk"},
+        {title: "Active", dataKey: "active"},
+      ];
+    }
+
+    function getData() {
+      var data = [];
+      vm.users.forEach(function(user){
+        data.push({
+          name: user.displayName,
+          phone: user.phoneNum || 'N/A',
+          address: user.address || 'N/A',
+          time: user.timeSlot || 'N/A',
+          milk: user.milkType || 'N/A',
+          active: user.active || 'N/A',
+        });
+      });
+
+      return data;
     }
 
     function buildPager() {
