@@ -24,8 +24,7 @@
       doc.autoTable(getColumns(), getData(), {
         styles: {fontSize: 8, overflow: 'linebreak', columnWidth: 'wrap'},
         columnStyles: {text: {columnWidth: 'auto'}},
-        theme: 'grid',
-        tableWidth: 'wrap'
+        bodyStyles: {valign: 'top'},
       });
       doc.save("users.pdf");
     }
