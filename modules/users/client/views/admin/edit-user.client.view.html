@@ -3,7 +3,7 @@
     <h1>User <span ng-bind="vm.user.username"></span></h1>
   </div>
   <div class="col-md-12">
-    <form name="vm.userForm" ng-submit="vm.update(vm.userForm.$valid)" novalidate>
+    <form name="vm.userForm" novalidate>
       <fieldset>
         <div class="form-group">
           <label for="amountDue"> Amount Due </label>
@@ -11,7 +11,7 @@
         </div>
         <div class="form-group">
           <label for="runningBill"> Running Bill </label>
-          <input type="text" id="runningBill" name="runningBill" class="form-control" ng-model="vm.user.runningBill" placeholder="" required>
+          <input type="textarea" style="height:250px" id="runningBill" name="runningBill" class="form-control" ng-model="vm.user.runningBill" placeholder="" required>
         </div>
         <div class="form-group" show-errors>
           <label class="control-label" for="roles">Roles</label>
@@ -28,7 +28,7 @@
           </label>
         </div>
         <div class="form-group">
-          <input type="submit" value="Update" class="btn btn-default">
+          <button type="button" value="Update" ng-click="vm.update(vm.userForm.$valid)" class="btn btn-default">
         </div>
       </fieldset>
     </form>
