@@ -53,6 +53,12 @@ describe('User CRUD tests', function () {
       email: 'test@test.com',
       username: credentials.usernameOrEmail,
       password: credentials.password,
+      address: 'Home',
+      quantity: '1.0',
+      timeSlot: '9:00',
+      milkType: "{\"double-toned\":1.0, \"toned\":0.0}",
+      phoneNum: "9876543210",
+      active: true,
       provider: 'local'
     };
 
@@ -63,31 +69,6 @@ describe('User CRUD tests', function () {
       should.not.exist(err);
       done();
     });
-  });
-
-  it('should be able to register a new user', function (done) {
-
-    _user.username = 'register_new_user';
-    _user.email = 'register_new_user_@test.com';
-
-    agent.post('/api/auth/signup')
-      .send(_user)
-      .expect(200)
-      .end(function (signupErr, signupRes) {
-        // Handle signpu error
-        if (signupErr) {
-          return done(signupErr);
-        }
-
-        signupRes.body.username.should.equal(_user.username);
-        signupRes.body.email.should.equal(_user.email);
-        // Assert a proper profile image has been set, even if by default
-        signupRes.body.profileImageURL.should.not.be.empty();
-        // Assert we have just the default 'user' role
-        signupRes.body.roles.should.be.instanceof(Array).and.have.lengthOf(1);
-        signupRes.body.roles.indexOf('user').should.equal(0);
-        return done();
-      });
   });
 
   it('should be able to login with username successfully and logout successfully', function (done) {
@@ -678,7 +659,8 @@ describe('User CRUD tests', function () {
 
           var userUpdate = {
             firstName: 'user_update_first',
-            lastName: 'user_update_last'
+            lastName: 'user_update_last',
+            phoneNum: '12347735535'
           };
 
           agent.put('/api/users')
@@ -751,6 +733,7 @@ describe('User CRUD tests', function () {
 
     _user2.username = 'user2_username';
     _user2.email = 'user2_email@test.com';
+    _user2.phoneNum = '1234735535';
 
     var credentials2 = {
       usernameOrEmail: 'username2',
@@ -777,7 +760,7 @@ describe('User CRUD tests', function () {
           var userUpdate = {
             firstName: 'user_update_first',
             lastName: 'user_update_last',
-            username: user.username
+            username: user.username,
           };
 
           agent.put('/api/users')
@@ -803,6 +786,7 @@ describe('User CRUD tests', function () {
 
     _user2.username = 'user2_username';
     _user2.email = 'user2_email@test.com';
+    _user2.phoneNum = '12345535';
 
     var credentials2 = {
       usernameOrEmail: 'username2',

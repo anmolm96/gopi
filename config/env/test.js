@@ -59,6 +59,12 @@ module.exports = {
         firstName: 'User',
         lastName: 'Local',
         displayName: 'User Local',
+        address: 'Home',
+        quantity: '1.0',
+        timeSlot: '9:00',
+        milkType: "{\"double-toned\":1.0, \"toned\":0.0}",
+        phoneNum: "9872543210",
+        active: true,
         roles: ['user']
       },
       seedAdmin: {
@@ -68,6 +74,12 @@ module.exports = {
         firstName: 'Admin',
         lastName: 'Local',
         displayName: 'Admin Local',
+        address: 'Home',
+        quantity: '1.0',
+        timeSlot: '9:00',
+        milkType: "{\"double-toned\":1.0, \"toned\":0.0}",
+        phoneNum: "9826543210",
+        active: true,
         roles: ['user', 'admin']
       }
     }

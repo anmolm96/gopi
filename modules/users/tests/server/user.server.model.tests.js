@@ -29,6 +29,12 @@ describe('User Model Unit Tests:', function () {
       email: 'test@test.com',
       username: 'username',
       password: 'M3@n.jsI$Aw3$0m3',
+      address: 'Home',
+      quantity: '1.0',
+      timeSlot: '9:00',
+      milkType: "{\"double-toned\":1.0, \"toned\":0.0}",
+      phoneNum: "9876543210",
+      active: true,
       provider: 'local'
     };
     // user2 is a clone of user1
@@ -40,6 +46,12 @@ describe('User Model Unit Tests:', function () {
       email: 'test3@test.com',
       username: 'different_username',
       password: 'Different_Password1!',
+      address: 'Home',
+      quantity: '1.0',
+      timeSlot: '9:00',
+      milkType: "{\"double-toned\":1.0, \"toned\":0.0}",
+      phoneNum: "9876643210",
+      active: true,
       provider: 'local'
     };
   });

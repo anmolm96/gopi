@@ -51,6 +51,9 @@ module.exports = {
         address: 'Home',
         quantity: '2.0',
         timeSlot: '9:00',
+        milkType: "{\"double-toned\":2.0, \"toned\":0.0}",
+        active: true,
+        phoneNum: "1876543210",
         displayName: 'User Local',
         roles: ['user']
       },
@@ -63,6 +66,9 @@ module.exports = {
         address: 'Home',
         quantity: '1.0',
         timeSlot: '9:00',
+        milkType: "{\"double-toned\":1.0, \"toned\":0.0}",
+        phoneNum: "9876043210",
+        active: true,
         displayName: 'Admin Local',
         roles: ['user', 'admin']
       }

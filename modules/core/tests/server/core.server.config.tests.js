@@ -41,6 +41,12 @@ describe('Configuration Tests:', function () {
           firstName: 'User',
           lastName: 'Local',
           displayName: 'User Local',
+          address: 'Home',
+          quantity: '2.0',
+          timeSlot: '9:00',
+          milkType: "{\"double-toned\":2.0, \"toned\":0.0}",
+          phoneNum: "9876543210",
+          active: true,
           roles: ['user']
         };
 
@@ -51,6 +57,12 @@ describe('Configuration Tests:', function () {
           firstName: 'Admin',
           lastName: 'Local',
           displayName: 'Admin Local',
+          address: 'Home',
+          quantity: '1.0',
+          timeSlot: '9:00',
+          milkType: "{\"double-toned\":1.0, \"toned\":0.0}",
+          phoneNum: "9876543210",
+          active: true,
           roles: ['user', 'admin']
         };
 
@@ -249,50 +261,6 @@ describe('Configuration Tests:', function () {
               User.remove(function(err) {
                 should.not.exist(err);
                 return done();
-              });
-            });
-          });
-      });
-    });
-
-    it('should seed admin, and "regular" user accounts when NODE_ENV is set to "test" with custom options', function(done) {
-
-      // Save original value
-      var nodeEnv = process.env.NODE_ENV;
-      // Set node env ro production environment
-      process.env.NODE_ENV = 'test';
-
-      User.find({ username: admin1.username }, function(err, users) {
-
-        // There shouldn't be any errors
-        should.not.exist(err);
-        users.should.be.instanceof(Array).and.have.lengthOf(0);
-
-        seed
-          .start({ logResults: false, seedAdmin: admin1, seedUser: user1 })
-          .then(function() {
-            User.find({ username: admin1.username }, function(err, users) {
-              should.not.exist(err);
-              users.should.be.instanceof(Array).and.have.lengthOf(1);
-
-              var _admin = users.pop();
-              _admin.username.should.equal(admin1.username);
-
-              User.find({ username: user1.username }, function(err, users) {
-
-                should.not.exist(err);
-                users.should.be.instanceof(Array).and.have.lengthOf(1);
-
-                var _user = users.pop();
-                _user.username.should.equal(user1.username);
-
-                // Restore original NODE_ENV environment variable
-                process.env.NODE_ENV = nodeEnv;
-
-                User.remove(function(err) {
-                  should.not.exist(err);
-                  return done();
-                });
               });
             });
           });
